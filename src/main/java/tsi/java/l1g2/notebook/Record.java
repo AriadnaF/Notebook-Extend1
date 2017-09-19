@@ -1,13 +1,16 @@
 package tsi.java.l1g2.notebook;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Record {
     private static int counter = 0;
     private int id;
     private String firstName;
     private String lastName;
-    private String phone;
     private String email;
-
+    private List<String> phones = new ArrayList<>();
 
     public Record() {
         counter++;
@@ -38,12 +41,13 @@ public class Record {
         this.lastName = lastName;
     }
 
-    public String getPhone() {
-        return phone;
+    public List<String> getPhones() {
+        return phones;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void addPhones(String... phones) {
+      //  this.phone = phone;
+        Collections.addAll(this.phones, phones);
     }
 
     @Override
@@ -52,8 +56,8 @@ public class Record {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", phone='" + phone + '\'' +
                 ", e-mail='" + email + '\'' +
+                ", phones='" + phones + '\'' +
                 '}';
     }
 }
