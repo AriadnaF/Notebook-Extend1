@@ -6,6 +6,7 @@ public class Record {
     private String firstName;
     private String lastName;
     private String phone;
+    private String email;
 
 
     public Record() {
@@ -29,6 +30,10 @@ public class Record {
         return lastName;
     }
 
+    public String getEmail() { return email; }
+
+    public void setEmail(String email) { this.email = email; }
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -48,6 +53,7 @@ public class Record {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", phone='" + phone + '\'' +
+                ", e-mail='" + email + '\'' +
                 '}';
     }
 }
