@@ -1,14 +1,11 @@
 package tsi.java.l1g2.notebook;
 
-public class Reminder extends Note implements Expirable {
+public class Alarm extends Note implements Expirable {
     private String time;
-
 
     public String getTime() {
         return time;
     }
-
-
 
     public void setTime(String time) {
         this.time = time;
@@ -16,7 +13,7 @@ public class Reminder extends Note implements Expirable {
 
     @Override
     public String toString() {
-        return "Reminder{" +
+        return "Alarm{" +
                 "id=" + getId() +
                 ", text='" + getText() + '\'' +
                 ", time='" + time + '\'' +
@@ -27,7 +24,7 @@ public class Reminder extends Note implements Expirable {
     public boolean contains(String str) {
         if (super.contains(str)) {
             return true;
-        } else if (time.toLowerCase().contains(str.toLowerCase())) {
+        } else if (time.contains(str)) {
             return true;
         }
         return false;

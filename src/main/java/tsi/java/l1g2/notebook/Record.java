@@ -18,5 +18,7 @@ public abstract class Record {
         return id;
     }
 
+    public abstract boolean contains(String str);
+
 
 }

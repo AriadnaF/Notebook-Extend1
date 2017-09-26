@@ -49,4 +49,33 @@ public class Person extends Note {
                 ", phones='" + phones + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean contains(String str) {
+        if (super.contains(str)) {
+            return true;
+        } else {
+            String strLower = str.toLowerCase();
+            if (firstName.toLowerCase().contains(strLower)){
+                return true;
+            }
+            else {
+
+                String lastNameLower = lastName.toLowerCase();
+                if (lastNameLower.contains(strLower)){
+                    return true;
+                } else if (email.toLowerCase().contains(strLower)){
+                    return true;
+
+                } else {
+                    for (String p : phones) {
+                        if (p.toLowerCase().contains(strLower)) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
 }
