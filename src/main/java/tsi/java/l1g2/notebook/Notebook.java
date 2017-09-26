@@ -9,12 +9,13 @@ public class Notebook {
     private final List<Record> records = new ArrayList<>();
 
     @Command
-    public void createPerson(String firstName, String lastName, String email, String... phones) {
+    public void createPerson(String firstName, String lastName, String email,String text, String... phones) {
         Person r = new Person();
         r.setFirstName(firstName);
         r.setLastName(lastName);
-        r.addPhones(phones);
         r.setEmail(email);
+        r.setText(text);
+        r.addPhones(phones);
         records.add(r);
     }
     @Command
