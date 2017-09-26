@@ -1,6 +1,7 @@
 package tsi.java.l1g2.notebook;
 
 import asg.cliche.Command;
+import asg.cliche.Param;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,11 @@ public class Notebook {
     private final List<Record> records = new ArrayList<>();
 
     @Command
-    public void createPerson(String firstName, String lastName, String email,String text, String... phones) {
+    public void createPerson(@Param(name = "First name") String firstName,
+                             @Param(name = "Last name") String lastName,
+                             @Param(name = "e-mail") String email,
+                             @Param(name = "note") String text,
+                             @Param (name = "phones") String... phones) {
         Person r = new Person();
         r.setFirstName(firstName);
         r.setLastName(lastName);
